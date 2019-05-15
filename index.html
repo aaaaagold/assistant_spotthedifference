@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+#pic{position:relative;}
+#pic>*{position:absolute;}
+.delta{left:-458px;}
+</style>
+</head>
+<body>
+<div id="console"><div>freq: <input type="number" id="freq" placeholder="freq" value="4"></div></div>
+<div id="pic">
+	<div><img src="example.png"></div>
+	<div id="delta"><img src="example.png"></div>
+</div>
+<script>
+let target=document.getElementById("delta"),freq=document.getElementById("freq");
+let foo=()=>{
+	target.setAttribute("class",(target.getAttribute("class")==="delta")?"":"delta");
+	setTimeout(foo,1000/Number(freq.value));
+};
+setTimeout(foo,1000/Number(freq.value));
+</script>
+</body>
+</html>
